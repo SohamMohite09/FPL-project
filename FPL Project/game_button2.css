@@ -1,0 +1,71 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+
+.game-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.game-icons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.game-icons button img {
+    width: 80px;  
+    height: 80px;
+    object-fit: contain;  
+}
+
+.game-icons button span {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #4CAF50;
+}
+
+
+#rps-result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+#computer-choice {
+    font-size: 18px;
+    color: #f44336; 
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="game_button2.css">
+
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="game-icons">
+        
+        <button onclick="playRockPaperScissors('rock')">
+            <img src="media/rock.jpg" alt="Rock Icon">
+            <span>Rock</span>
+        </button>
+        <button onclick="playRockPaperScissors('paper')">
+            <img src="media/paper.jpg" alt="Paper Icon">
+            <span>Paper</span>
+        </button>
+        <button onclick="playRockPaperScissors('scissors')">
+            <img src="media/scissors.jpg" alt="Scissors Icon">
+            <span>Scissors</span>
+        </button>
+    </div>
+    <p id="rps-result" class="result"></p>
+    <div id="computer-choice"></div> <!-- Display the result text for computer -->
+    <div id="computer-image"></div> <!-- Display the image for computer's choice -->
+    <a href="Main_Page2.html">Back to Home</a>
+
+    <script>
+        function playRockPaperScissors(playerChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            let result = '';
+
+            // Determine the result based on player's choice vs computer's choice
+            if (playerChoice === computerChoice) {
+                result = "It's a tie!";
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'paper' && computerChoice === 'rock') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                result = "Congrats! You win!";
+            } else {
+                result = "Sorry! You lose!";
+            }
+
+            // Display the result for the player
+            document.getElementById('rps-result').textContent = `You chose ${playerChoice}. ${result}`;
+
+            // Display the computer's choice text
+            document.getElementById('computer-choice').textContent = `Computer chose ${computerChoice}:`;
+
+            // Display the computer's choice image
+            const computerImage = document.getElementById('computer-image');
+            computerImage.innerHTML = `<img src="media/${computerChoice}.jpg" alt="${computerChoice} Icon" style="width: 80px; height: 80px;">`;
+        }
+    </script>
+</body>
+</html>

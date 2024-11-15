@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="game_buttons.css">
+</head>
+<body>
+    <h1>Number Guessing Game (1-100)</h1>
+    <input type="number" id="guess-number" placeholder="Enter a number (1-100)">
+    <button onclick="guessNumber()">Guess</button>
+    <p id="guess-result"></p>
+    <a href="Main_Page2.html">Back to Home</a>
+
+    <script>
+        let targetNumber = Math.floor(Math.random() * 100) + 1;
+
+        function guessNumber() {
+            const userGuess = parseInt(document.getElementById('guess-number').value);
+            const resultElement = document.getElementById('guess-result');
+            
+            if (userGuess === targetNumber) {
+                resultElement.textContent = "Congratulations! You guessed the right number!";
+            } else if (userGuess < targetNumber) {
+                resultElement.textContent = "Please Enter a higher number!";
+            } else {
+                resultElement.textContent = "Please Enter a lower number";
+            }
+        }
+    </script>
+</body>
+</html>
